@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Fitness Calculator</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+    <body>
+        <script src="/script.js" async defer></script>
+        <h1>BMI Calculator</h1>
+        <div class="wrapper">
+            <div class="height">
+                <span>Height in Inches:</span>
+                <span><input type="number" id="height" placeholder="Height(in)"></span><br>
+                <span id="height-error" class="height-error"></span>
+            </div>
+            <div class="weight">
+                <span>Weight in Pounds:</span>
+                <span><input type="number" id="weight" placeholder="Weight(lbs)"></span><br>
+                <span id="weight-error" class="weight-error"></span>
+            </div>
+            <button id="bmi-calculate" class="bmi-calculate">Calculate</button>
+            <p id="result" class="result"></p>
+        </div>
+    </body>
+</html>
