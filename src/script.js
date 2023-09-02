@@ -1,5 +1,7 @@
 let calculateButton = document.getElementById('bmi-calculate')
 let clearButton = document.getElementById('clear-input')
+let metricButton = document.getElementById('metric')
+let imperialButton = document.getElementById('imperial')
 
 calculateButton.addEventListener('click', () => {
     const height = parseInt(document.getElementById('height').value);
@@ -48,4 +50,16 @@ clearButton.addEventListener('click', () => {
     document.getElementById('height').value = '';
     document.getElementById('weight').value = '';
     document.getElementById('result').innerHTML = '';
+    document.getElementById('height-unit').innerHTML = '';
+    document.getElementById('weight-unit').innerHTML = '';
+});
+
+metricButton.addEventListener('click', () => {
+    document.getElementById('height-unit').innerHTML = 'Meters:';
+    document.getElementById('weight-unit').innerHTML = 'Kilograms:';
+});
+
+imperialButton.addEventListener('click', () => {
+    document.getElementById('height-unit').innerHTML = 'Inches:';
+    document.getElementById('weight-unit').innerHTML = 'Pounds:';
 });

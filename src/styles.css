@@ -19,12 +19,24 @@ body h1 {
     position: relative;
     background-color: #05386B;
     width: 60%;
-    margin: 7% auto 0;
+    margin: 5% auto 0;
     font-size: 26px;
     color: #EDF5E1;
-    padding: 15% 0 10%;
+    padding: 5% 0 10%;
     border: solid 7px #379683;
     border-radius: 5%;
+}
+
+.flex-parent {
+    display: flex;
+    justify-content: center;
+}
+
+.unit-button {
+    margin: 0 1px 50px;
+    padding: 0.2rem 1rem;
+    font-size: 18px;
+    font-family: Arial;
 }
 
 .height, .weight {
@@ -44,6 +56,10 @@ body h1 {
     box-sizing: border-box;
 }
 
+.height-unit, .weight-unit {
+    text-align: left;
+}
+
 .height-error, .weight-error {
     font-size: 18px;
     margin-left: 15%;
@@ -56,19 +72,8 @@ input[type="number"] {
     margin-left: 5%;
 }
 
-.center {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateY(-50%);
-}
-
-.button {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: 5% auto;
+.action-button {
+    margin: 0 1%;
     font-size: 24px;
     font-family: Arial;
     color: #05386B;
@@ -78,11 +83,11 @@ input[type="number"] {
     background-color: #8EE4AF;
 }
 
-.button:hover {
+.action-button:hover {
     background-color: #EDF5E1;
 }
 
-.button:active {
+.action-button:active {
     background-color: #379683;
 }
 

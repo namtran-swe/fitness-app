@@ -12,19 +12,23 @@
         <script src="/script.js" async defer></script>
         <h1>BMI Calculator</h1>
         <div class="wrapper">
+            <div id="unit-select" class="flex-parent">
+                <button id="metric" class="unit-button">Metric</button>
+                <button id="imperial" class="unit-button">Imperial</button>
+            </div>
             <div class="height">
-                <span>Height in Inches:</span>
+                <span>Height in <span id="height-unit"></span></span>
                 <span><input type="number" id="height" placeholder="Height(in)"></span><br>
                 <span id="height-error" class="height-error"></span>
             </div>
             <div class="weight">
-                <span>Weight in Pounds:</span>
+                <span>Weight in <span id="weight-unit"></span></span>
                 <span><input type="number" id="weight" placeholder="Weight(lbs)"></span><br>
                 <span id="weight-error" class="weight-error"></span>
             </div>
-            <div>
-                <button id="bmi-calculate" class="button">Calculate</button>
-                <button id="clear-input" class="button">Clear</button>
+            <div class="flex-parent">
+                <button id="bmi-calculate" class="action-button">Calculate</button>
+                <button id="clear-input" class="action-button">Clear</button>
             </div>
             <p id="result" class="result"></p>
         </div>
