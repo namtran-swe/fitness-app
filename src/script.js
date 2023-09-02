@@ -1,6 +1,7 @@
-let button = document.getElementById('bmi-calculate')
+let calculateButton = document.getElementById('bmi-calculate')
+let clearButton = document.getElementById('clear-input')
 
-button.addEventListener('click', () => {
+calculateButton.addEventListener('click', () => {
     const height = parseInt(document.getElementById('height').value);
     const weight = parseInt(document.getElementById('weight').value);
 
@@ -24,15 +25,27 @@ button.addEventListener('click', () => {
     if (height_status && weight_status) {
         const bmi = ((weight / (height*height)) * 703).toFixed(2);
 
-        if (bmi < 18.6) {
+        if (bmi < 18.5) {
             result.innerHTML = 'BMI : ' + bmi + ' (Underweight)';
-        } else if (bmi >= 18.6 && bmi < 24.9) {
+        } else if (bmi >= 18.5 && bmi < 25) {
             result.innerHTML = 'BMI : ' + bmi + ' (Normal)';
-        } else {
+        } else if (bmi >= 25 && bmi < 30) {
             result.innerHTML = 'BMI : ' + bmi + ' (Overweight)';
+        } else if (bmi >= 30 && bmi < 40) {
+            result.innerHTML = 'BMI : ' + bmi + ' (Obesity)';
+        } else {
+            result.innerHTML = 'BMI : ' + bmi + ' (Severe Obesity)';
         }
     } else {
         alert('The form has errors');
         result.innerHTML = '';
     }
+});
+
+clearButton.addEventListener('click', () => {
+    document.getElementById('height-error').innerHTML = '';
+    document.getElementById('weight-error').innerHTML = '';
+    document.getElementById('height').value = '';
+    document.getElementById('weight').value = '';
+    document.getElementById('result').innerHTML = '';
 });

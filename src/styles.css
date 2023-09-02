@@ -56,9 +56,19 @@ input[type="number"] {
     margin-left: 5%;
 }
 
-.bmi-calculate {
-    display: block;
-    margin: 15% auto 0;
+.center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+}
+
+.button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 5% auto;
     font-size: 24px;
     font-family: Arial;
     color: #05386B;
@@ -68,11 +78,11 @@ input[type="number"] {
     background-color: #8EE4AF;
 }
 
-.bmi-calculate:hover {
+.button:hover {
     background-color: #EDF5E1;
 }
 
-.bmi-calculate:active {
+.button:active {
     background-color: #379683;
 }
 
@@ -81,5 +91,5 @@ input[type="number"] {
     color: #EDF5E1;
     z-index: 1;
     text-align: center;
-    margin: 3rem auto;
+    margin: 3rem auto 0;
 }
