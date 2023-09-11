@@ -3,6 +3,16 @@ let clearButton = document.getElementById('clear-input')
 let metricButton = document.getElementById('metric')
 let imperialButton = document.getElementById('imperial')
 
+window.onload = oninit();
+
+function oninit() {
+    document.getElementById('imperial').checked = true;
+    if (document.getElementById('imperial').value !== "") {
+        document.getElementById('height-unit').innerHTML = 'Inches:';
+        document.getElementById('weight-unit').innerHTML = 'Pounds:';
+    }
+}
+
 calculateButton.addEventListener('click', () => {
     const height = parseInt(document.getElementById('height').value);
     const weight = parseInt(document.getElementById('weight').value);
@@ -52,6 +62,7 @@ clearButton.addEventListener('click', () => {
     document.getElementById('result').innerHTML = '';
     document.getElementById('height-unit').innerHTML = '';
     document.getElementById('weight-unit').innerHTML = '';
+    oninit();
 });
 
 metricButton.addEventListener('click', () => {

@@ -45,8 +45,7 @@ body h1 {
     font-family: Arial;
 }
 
-.height span:first-of-type, .weight span:first-of-type {
-    text-align: left;
+.left-margin-10 {
     margin-left: 10%;
 }
 
@@ -58,6 +57,7 @@ body h1 {
 
 .height-unit, .weight-unit {
     text-align: left;
+    margin-left: 0;
 }
 
 .height-error, .weight-error {

@@ -13,18 +13,18 @@
         <h1>BMI Calculator</h1>
         <div class="wrapper">
             <div id="unit-select" class="flex-parent">
-                <input name="unit" id="metric" class="unit-button" type="radio" value="metric" checked/>
-                <label for="metric">Metric</label>
                 <input name="unit" id="imperial" class="unit-button" type="radio" value="imperial"/>
                 <label for="imperial">Imperial</label>
+                <input name="unit" id="metric" class="unit-button" type="radio" value="metric"/>
+                <label for="metric">Metric</label>
             </div>
             <div class="height">
-                <span>Height in <span id="height-unit"></span></span>
+                <span class="left-margin-10">Height in <span id="height-unit"></span></span>
                 <span><input type="number" id="height" placeholder="Height"></span><br>
                 <span id="height-error" class="height-error"></span>
             </div>
             <div class="weight">
-                <span>Weight in <span id="weight-unit"></span></span>
+                <span class="left-margin-10">Weight in <span id="weight-unit"></span></span>
                 <span><input type="number" id="weight" placeholder="Weight"></span><br>
                 <span id="weight-error" class="weight-error"></span>
             </div>
