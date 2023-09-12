@@ -9,7 +9,7 @@ body {
 
 body h1 {
     display: block;
-    margin: 5% auto 0;
+    margin: 3% auto 0;
     text-align: center;
     font-family: Arial;
     font-size: 40px;
@@ -19,10 +19,10 @@ body h1 {
     position: relative;
     background-color: #05386B;
     width: 60%;
-    margin: 5% auto 0;
+    margin: 3% auto 0;
     font-size: 26px;
     color: #EDF5E1;
-    padding: 5% 0 10%;
+    padding: 3% 0 10%;
     border: solid 7px #379683;
     border-radius: 5%;
 }
@@ -32,27 +32,39 @@ body h1 {
     justify-content: center;
 }
 
-.unit-button {
-    margin: 0 1px 50px;
-    padding: 0.2rem 1rem;
-    font-size: 18px;
+#unit-select label {
+    margin: 0 0.5rem 4rem;
+    padding: 0.2rem 1.5rem;
+    border: solid 2px black;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    font-size: 16px;
     font-family: Arial;
 }
 
+#unit-select input[type="radio"]:hover + label {
+    background-color: lightblue;
+}
+
+#unit-select input[type="radio"]:checked + label {
+    background-color: gray;
+}
+
+.unit-button {
+    font-size: 18px;
+    font-family: Arial;
+    appearance: none;
+}
+
 .height, .weight {
-    margin-bottom: 10%;
+    margin-bottom: 7%;
     font-size: 30px;
     font-family: Arial;
 }
 
 .left-margin-10 {
     margin-left: 10%;
-}
-
-.height span:nth-child(2), .weight span:nth-child(2) {
-    float: right;
-    margin-right: 10%;
-    box-sizing: border-box;
 }
 
 .height-unit, .weight-unit {
@@ -66,10 +78,12 @@ body h1 {
 }
 
 input[type="number"] {
+    float: right;
     padding: 5px;
-    width: 45%;
-    height: 20%;
-    margin-left: 5%;
+    width: 15%;
+    height: 30%;
+    margin: 0 15% 0 2%;
+    box-sizing: border-box;
 }
 
 .action-button {

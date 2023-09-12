@@ -14,8 +14,9 @@ function oninit() {
 }
 
 calculateButton.addEventListener('click', () => {
-    const height = parseInt(document.getElementById('height').value);
-    const weight = parseInt(document.getElementById('weight').value);
+    const height = parseFloat(document.getElementById('height').value);
+    const weight = parseFloat(document.getElementById('weight').value);
+    var bmi = NaN;
 
     const result = document.getElementById('result');
     let height_status = false, weight_status = false;
@@ -34,8 +35,12 @@ calculateButton.addEventListener('click', () => {
         weight_status = true;
     }
 
-    if (height_status && weight_status) {
-        const bmi = ((weight / (height*height)) * 703).toFixed(2);
+    if(height_status && weight_status) {
+        if (document.getElementById('imperial').checked === true) {
+            bmi = ((weight / (height*height)) * 703).toFixed(2);
+        } else {
+            bmi = (weight / (height*height)).toFixed(2);
+        }
 
         if (bmi < 18.5) {
             result.innerHTML = 'BMI : ' + bmi + ' (Underweight)';
@@ -60,8 +65,6 @@ clearButton.addEventListener('click', () => {
     document.getElementById('height').value = '';
     document.getElementById('weight').value = '';
     document.getElementById('result').innerHTML = '';
-    document.getElementById('height-unit').innerHTML = '';
-    document.getElementById('weight-unit').innerHTML = '';
     oninit();
 });
 
