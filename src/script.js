@@ -1,16 +1,18 @@
-let calculateButton = document.getElementById('bmi-calculate')
-let clearButton = document.getElementById('clear-input')
-let metricButton = document.getElementById('metric')
-let imperialButton = document.getElementById('imperial')
+const calculateButton = document.getElementById('bmi-calculate');
+const clearButton = document.getElementById('clear-input');
+const metricButton = document.getElementById('metric');
+const imperialButton = document.getElementById('imperial');
+const scale = document.getElementById('scale');
 
 window.onload = oninit();
 
 function oninit() {
     document.getElementById('imperial').checked = true;
     if (document.getElementById('imperial').value !== "") {
-        document.getElementById('height-unit').innerHTML = 'Inches:';
-        document.getElementById('weight-unit').innerHTML = 'Pounds:';
+        document.querySelector(".height-desc").innerHTML = "Enter Height in Inches:";
+        document.querySelector(".weight-desc").innerHTML = "Enter Weight in Pounds:";
     }
+    scale.style.width = "0%";
 }
 
 calculateButton.addEventListener('click', () => {
@@ -19,6 +21,8 @@ calculateButton.addEventListener('click', () => {
     var bmi = NaN;
 
     const result = document.getElementById('result');
+    const category = document.getElementById('category');
+
     let height_status = false, weight_status = false;
 
     if (height === "" || isNaN(height) || (height <=0)) {
@@ -43,19 +47,34 @@ calculateButton.addEventListener('click', () => {
         }
 
         if (bmi < 18.5) {
-            result.innerHTML = 'BMI : ' + bmi + ' (Underweight)';
+            result.innerHTML = bmi;
+            category.innerHTML = ' (Underweight)';
+            scale.style.width = ((bmi / 50) - 0.16)*100 + "%"
+            scale.style.backgroundColor = "Gold";
         } else if (bmi >= 18.5 && bmi < 25) {
-            result.innerHTML = 'BMI : ' + bmi + ' (Normal)';
+            result.innerHTML = bmi;
+            category.innerHTML = ' (Normal)';
+            scale.style.width = ((bmi / 50) - 0.14)*100 + "%"
+            scale.style.backgroundColor = "Green";
         } else if (bmi >= 25 && bmi < 30) {
-            result.innerHTML = 'BMI : ' + bmi + ' (Overweight)';
+            result.innerHTML = bmi;
+            category.innerHTML = ' (Overweight)';
+            scale.style.width = ((bmi / 50) - 0.08)*100 + "%"
+            scale.style.backgroundColor = "Gold";
         } else if (bmi >= 30 && bmi < 40) {
-            result.innerHTML = 'BMI : ' + bmi + ' (Obesity)';
+            result.innerHTML = bmi;
+            category.innerHTML = ' (Obesity)';
+            scale.style.width = ((bmi / 50) - 0.04)*100 + "%"
+            scale.style.backgroundColor = "Orange";
         } else {
-            result.innerHTML = 'BMI : ' + bmi + ' (Severe Obesity)';
+            result.innerHTML = bmi;
+            category.innerHTML = ' (Severe Obesity)';
+            scale.style.width = ((bmi / 50) - 0.04)*100 + "%"
+            scale.style.backgroundColor = "Red";
         }
     } else {
         alert('The form has errors');
-        result.innerHTML = '';
+        result.innerHTML = '0.00';
     }
 });
 
@@ -64,16 +83,17 @@ clearButton.addEventListener('click', () => {
     document.getElementById('weight-error').innerHTML = '';
     document.getElementById('height').value = '';
     document.getElementById('weight').value = '';
-    document.getElementById('result').innerHTML = '';
+    document.getElementById('result').innerHTML = '0.00';
+    document.getElementById('category').innerHTML = '';
     oninit();
 });
 
 metricButton.addEventListener('click', () => {
-    document.getElementById('height-unit').innerHTML = 'Meters:';
-    document.getElementById('weight-unit').innerHTML = 'Kilograms:';
+    document.querySelector(".height-desc").innerHTML = "Enter Height in Meters:";
+    document.querySelector(".weight-desc").innerHTML = "Enter Weight in Kilograms:";
 });
 
 imperialButton.addEventListener('click', () => {
-    document.getElementById('height-unit').innerHTML = 'Inches:';
-    document.getElementById('weight-unit').innerHTML = 'Pounds:';
+    document.querySelector(".height-desc").innerHTML = "Enter Height in Inches:";
+    document.querySelector(".weight-desc").innerHTML = "Enter Weight in Pounds:";
 });
